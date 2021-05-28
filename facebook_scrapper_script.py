@@ -2,6 +2,8 @@ from facebook_scraper import get_group_info
 from facebook_scraper import get_posts
 import json
 import datetime
+import time
+import random
 
 # BoutiqueTravellers Group ID
 group_id = 106503496676216
@@ -33,7 +35,7 @@ infos = get_group_info(group_id)
 
 posts = get_posts(
     group=group_id,
-    page_limit=1,
+    page_limit=50,
     extra_info=True,
     cookies="facebook.com_cookies.txt",
     options={"comments": True, "reactors": True},
@@ -46,9 +48,12 @@ for post in posts:
     post_list.append(post)
     if i == n_posts:
         break
+    if i % 20 == 0:
+        print(f"We have {i} posts")
+        time.sleep(180 * random.uniform(0.5, 1))
     i += 1
 
-print("We got some Data")
+print(f"We got some {len(post_list)} posts")
 
 
 def myconverter(o):
