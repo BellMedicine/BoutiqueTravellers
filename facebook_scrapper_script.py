@@ -7,7 +7,7 @@ import datetime
 group_id = 106503496676216
 
 # Set number of posts wanted. Use -1 to try to get all
-n_posts = 2
+n_posts = 10
 
 # Post items that are interesting to keep
 keep_items = [
@@ -61,7 +61,7 @@ def myconverter(o):
 _ = 0
 
 # TODO #3
-with open("2_posts.json", "w") as fout:
+with open(f"{n_posts}_posts.json", "w") as fout:
     json.dump(post_list, fout, default=myconverter)
 
 print("See you next time!")
