@@ -7,7 +7,7 @@ import datetime
 group_id = 106503496676216
 
 # Set number of posts wanted. Use -1 to try to get all
-n_posts = 10
+n_posts = 1000
 
 # Post items that are interesting to keep
 keep_items = [
